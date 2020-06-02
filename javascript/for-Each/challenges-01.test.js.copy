@@ -33,12 +33,12 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  (arr).push(value);
+  (arr).push(value)
 };
 
 const addNumbers = (num, arr, times, callback) => {
     for(let i = 0; i < times; i++){
-    callback(arr, num);
+    callback(arr, num)
 }
 return arr;
 };
@@ -61,15 +61,8 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-
-  let myList = [];
-
-  availableItems.forEach(function(value) {
-    if (value.available === true){
-      myList.push(value.name);
-    }
-  });
-  return myList;
+  createList.forEach(availableItems);
+  return createList
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,7 +82,7 @@ Return the resulting output array.
 // const fizzbuzz = (arr) => {
 //     let fbArray = [];
   
-//     arr.forEach(function) ( {
+//     arr.forEach(function(arr) {
 //         if(i % 3 == 0 && i % 5 == 0){
 //                 fbArray.push('FizzBuzz')
 //             }else if(i % 3 == 0) {
@@ -98,14 +91,29 @@ Return the resulting output array.
 //                 fbArray.push('Buzz')
 //             }else{
 //                 fbArray.push(i)
-//             })
+//             }
 //         }
 //     return fbArray;
-//   };
+//   });
   
-//   fizzbuzz();
+//   // fizzbuzz();
 
 //   fbArray.forEach()
+
+const fizzbuzz = (arr) => {
+  // Solution code here...
+  let arr2=[];
+  arr.forEach(function(value){
+    if ((value % 3 === 0) && (value % 5 === 0)){arr2.push('Fizz Buzz');}
+    else if (value % 5 ===0){arr2.push('Buzz');}
+    else if (value % 3 ===0){arr2.push('Fizz');}
+    else {arr2.push(value);}
+  });
+  return arr2;
+};
+
+// test fbArray.forEach(arr2);
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -118,20 +126,20 @@ Run your tests from the console: jest challenges-01.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return the message with all uppercase characters', () => {
     expect(speaker('hello 301 students!', greeting)).toStrictEqual('HELLO 301 STUDENTS!');
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
 
   test('It should only add the available items to the list', () => {
