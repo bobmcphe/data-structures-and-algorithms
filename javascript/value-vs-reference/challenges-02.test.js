@@ -42,7 +42,16 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+//   let secArr = arr;
+//   let arrVar = arr[0];
+
+//   for(let i=0; i<arr.length; i++) {
+//         secArr.push(arrVar);
+
+        let firstValue = arr[0];
+        arr.push(firstValue);
+        console.log(arr);
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,7 +122,7 @@ Run your tests from the console: jest challenges-02.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
+xdescribe('Testing challenge 1', () => {
   test('It should return a new array of numbers raised to the thrid power', () => {
     expect(raisedToTheThird([2, 4, 5, -7, 0])).toStrictEqual([8, 64, 125, -343, 0]);
   });
@@ -129,7 +138,7 @@ xdescribe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should append by modifying the oiginal', () => {
     const a = ['Yes', 'it', 'is'];
     appendFirstToLast(a);
