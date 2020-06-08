@@ -107,6 +107,24 @@ Return the resulting output array.
 
 //   fbArray.forEach()
 
+
+const fizzbuzz = (arr) => {
+  let newArray = [];
+
+    arr.forEach(function(value){
+      if((value % 3 === 0) && (value % 5 === 0)){
+        newArray.push('Fizz Buzz');
+    }else if(value % 5 === 0){
+      newArray.push('Fizz');
+    }else if(value % 3 === 0){
+      newArray.push('Buzz');
+    }else{
+      newArray.push(value);
+    }
+  });
+return newArray;
+  };
+
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
