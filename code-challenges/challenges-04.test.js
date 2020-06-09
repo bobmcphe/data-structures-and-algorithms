@@ -41,6 +41,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let validator = /[0-9]/g;
+  return (validator.test(input));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,6 +55,7 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  str.search();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,7 +148,7 @@ describe('Testing challenge 1', () => {
   })
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return true if the input is a number', () => {
     expect(isNum(1234567890)).toBeTruthy();
     expect(isNum('12345')).toBeTruthy();
