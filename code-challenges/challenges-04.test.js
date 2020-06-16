@@ -24,7 +24,7 @@ let $ = createSnippetWithJQuery(`
 
 const generateSubmitButton = () => {
   // Solution code here...
-    $("label").append('<button></button>');
+    $('label').append('<button>Addd itom</button>');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,10 +55,8 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let validator2 = /[A-Z][A-Z\d]+/;
+  let validator2 = /\b[A-Z]+[a-z]*\b/g;
   return (str.match(validator2));
-
-  // /[\w^A-Z]/g
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,7 +68,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 const citiesAtoJ = (arr) => {
   let newArray = [];
 
-  return (arr.match(/[A-Z]/g).push(newArray));
+  return (arr.match(/[A-J]/g).push(newArray));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -180,7 +178,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
