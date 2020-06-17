@@ -75,7 +75,13 @@ const templatingWithMustache = () => {
 
   characters.forEach(item =>{
     let $attach = $(#template).html();
-  })
+    let name: item.name;
+    let spouse: item.spouse;
+    let children = item.children;
+    let character = item.character;
+    let house = item.house;
+  });
+  newArray.push($attach);
 };
 
 /* ------------------------------------------------------------------------------------------------
