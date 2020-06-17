@@ -40,17 +40,15 @@ const templateWithJQuery = () => {
   // Solution code here...
 
   starWarsPeople.forEach(function (person){
-      let $clone = $(#template).clone();
+      let $clone = $('#template').clone();
       $('main').append($clone);
       $clone.find('h2').text(person.name);
       $clone.find('h3').text(person.height);
       $clone.find('p').text(person.eye_color);
       $clone.removeAttr('id');
-    });
-    console.log($('main').html());
-  };
+  });
 
-  $('#template').append()
+  // $('#template').append()
 };
 
 /* ------------------------------------------------------------------------------------------------
