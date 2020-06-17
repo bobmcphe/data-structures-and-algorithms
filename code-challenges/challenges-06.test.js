@@ -75,13 +75,12 @@ const templatingWithMustache = () => {
 
   characters.forEach(item =>{
     let $attach = $('#template').html();
-    let fillTheTemplate = Mustach.render($attach,{
-    let name = item.name;
-    let spouse = item.spouse;
-    let children = item.children;
-    let character = item.character;
-    let house = item.house;
-
+    let fillTheTemplate = Mustache.render($attach,{
+    'name': item.name,
+    'spouse': item.spouse,
+    'children': item.children,
+    'character': item.character,
+    'house': item.house,
     });
   });
   newArray.push($attach);
