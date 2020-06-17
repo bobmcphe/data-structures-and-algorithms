@@ -64,7 +64,7 @@ const sortByLength = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 - Stretch Goal
+CHALLENGE 5 - Stretch Goal This is dumb. I have to modify content since modifying title doesn't seem to be sufficient to send whole thing to GH
 
 Write a function named alphabetizeBetter that takes in an array of strings and returns the same array, with the strings sorted alphabetically. Capitalization should not change the sort order of two strings.
 
