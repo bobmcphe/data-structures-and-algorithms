@@ -73,17 +73,12 @@ const templatingWithMustache = () => {
   // Solution code here...
   let newArray = [];
 
-  characters.forEach(item =>{
+  Object.values(characters).forEach(item =>{
     let $attach = $('#template').html();
-    let fillTheTemplate = Mustache.render($attach,{
-    'name': item.name,
-    'spouse': item.spouse,
-    'children': item.children,
-    'character': item.character,
-    'house': item.house,
-    });
+    let fillTheTemplate = Mustache.render($attach, item);
+    newArray.push(fillTheTemplate);
   });
-  newArray.push($attach);
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -212,7 +207,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return the keys from an object', () => {
     expect(getCourseKeys(courseInfo)).toStrictEqual(['name', 'duration', 'topics', 'finalExam']);
   });
