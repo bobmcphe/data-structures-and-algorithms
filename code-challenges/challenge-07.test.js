@@ -49,7 +49,7 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
-  
+
   
 };
 
@@ -61,6 +61,15 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+//   let newArray = arr.forEach( (value, idx) => {
+//     value * value;
+// });
+
+  let squares = arr.forEach( function(value, idx) {
+    return true;
+  });
+  console.log(squares);
+  return squares;
 };
 
 /* ------------------------------------------------------------------------------------------------
