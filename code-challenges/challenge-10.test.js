@@ -56,6 +56,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  let total = 0;
+  input.filter(array => {
+    array.filter(element => {
+      if (element === target){
+        total++;
+      }
+    });
+  });
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
