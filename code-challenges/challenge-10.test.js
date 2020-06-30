@@ -9,6 +9,10 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 const createServer = () => {
   // Solution code here...
 
+  const express = require('express');
+
+  //routes go here
+  app = express();
   app.get('/hello', greeting);
   app.get('/aboutme', getBio);
   app.get('/favoritefoods', getFood);
