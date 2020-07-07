@@ -24,7 +24,8 @@ let $ = createSnippetWithJQuery(`
 
 const generateSubmitButton = () => {
   // Solution code here...
-    $('label').append('<button>Addd itom</button>');
+  let $button = $(`<button>submit</button>`);
+  $('section').append($button);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,9 +56,14 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let validator2 = /\b[A-Z]+[a-z]*\b/g;
-  return (str.match(validator2));
+  let regex = /[A-Z][a-zA-Z]*\b/g;
+  if (!str.match(regex)) {
+    return [];
+  } else {
+    return str.match(regex);
+  }
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -67,8 +73,13 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   let newArray = [];
-
-  return (arr.match(/[A-J]/g).push(newArray));
+  let regex = /^[A-J]/;
+  arr.forEach(element => {
+    if (regex.test(element)) {
+      newArray.push(element);
+    }
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -144,14 +155,14 @@ Run your tests from the console: jest challenges-04.solution.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should add a submit button to the DOM', () => {
     generateSubmitButton();
     expect($('button').text()).toStrictEqual('submit');
   })
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return true if the input is a number', () => {
     expect(isNum(1234567890)).toBeTruthy();
     expect(isNum('12345')).toBeTruthy();
