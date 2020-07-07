@@ -8,34 +8,22 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 
 const createServer = () => {
   // Solution code here...
-
   const express = require('express');
+  const app = express();
 
-  //routes go here
-  app = express();
-  app.get('/hello', greeting);
-  app.get('/aboutme', getBio);
-  app.get('/favoritefoods', getFood);
-
-  function getBio() {
-    // return 'My Name is Bob';
-    response.status(200).send('My name is Bob');
-  }
-
-  function greeting() {
-    // return 'hello';
-    response.status(200).send('hello');
-  }
-
-  function getFood() {
-    // foodArray = ['biscuits and gravy', 'country fried steak', 'filet mignon'];
-    // return foodArray;
-    response.status(200).send(['biscuits and gravy', 'country fried steak', 'filet mignon']);
-  }
-
-  app.use((error, request, answer, next) => {
-    response.status(404).send('not found');
+  app.get('/hello', (request, response) => {
+    response.status(200).send('Bobby Jo');
   });
+
+  app.get('/aboutme', (request, response) => {
+    response.status(200).send('hello');
+  });
+
+  app.get('/favoritefoods', (request, response) => {
+    let foods = ['steak', 'potatos'];
+    response.status(200).send(foods);
+  });
+
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
@@ -79,6 +67,8 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  return input.map(arr => arr.reduce((acc, val) => 
+  acc += val), 0).reduce((acc, val) => acc += val, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,14 +85,16 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-  let total = 0;
-  input.map(array => {
-    array.reduce((accumulator, value) => {
-      total = accumulator + value;
-      return total;
-    }, total);
-  });
-  return total;
+  // let total = 0;
+  // input.map(array => {
+  //   array.reduce((accumulator, value) => {
+  //     total = accumulator + value;
+  //     return total;
+  //   }, total);
+  // });
+  // return total;
+
+  return input.map(arr => arr.filter(value => (typeof value === 'number' && value % 5 === 0))).map(arr => arr.map(value => Math.pow(2, value)));
 };
 
 /* ------------------------------------------------------------------------------------------------
